@@ -15,10 +15,12 @@ calories = 0
 for item in correctedData:
   if item == "":
     calories = 0
+    #converts the string into an integer
   else:
     num = int(item)
     calories += num
 
+#conditionals to determine sorted values
   if calories > maxCalories:
     maxCalories = calories
   elif calories > maxTwo:
