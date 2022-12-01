@@ -23,7 +23,7 @@ for item in correctedData:
     maxCalories = calories
   elif calories > maxTwo:
     maxTwo = calories
-  elif calories > maxThree
+  elif calories > maxThree:
     maxThree = calories
   
 
