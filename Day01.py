@@ -5,6 +5,7 @@
 with open('Day01data.in') as data:
   correctedData = [i for i in data.read().strip().split('\n')]
 
+print(correctedData)
 
 #traversing each string in our dataset
 maxCalories = 0
@@ -22,6 +23,7 @@ for item in correctedData:
 
 #conditionals to determine sorted values
   if calories > maxCalories:
+
     maxCalories = calories
   elif calories > maxTwo:
     maxTwo = calories
