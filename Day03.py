@@ -1,11 +1,6 @@
 with open('Day03data.in') as data:
   rucksacks = [i for i in data.read().strip().split('\n')]
 
-ruck1 = rucksacks[0]
-firstHalf = ruck1[:len(ruck1)//2]
-secondHalf = ruck1[len(ruck1)//2:]
-print(firstHalf, secondHalf)
-
 alphaValues = {
   "a": 1, "b": 2, "c": 3, "d": 4, "e": 5,
   "f": 6, "g": 7, "h": 8, "i": 9, "j": 10,
@@ -16,12 +11,19 @@ alphaValues = {
   "A": 27, "B": 28, "C": 29, "D": 30, "E": 31,
   "F": 32, "G": 33, "H": 34, "I": 35, "J": 36,
   "K": 37, "L": 38, "M": 39, "N": 40, "O": 41,
-  "P": 41, "Q": 42, "R": 43, "S": 44, "T": 45,
-  "U": 46, "V": 47, "W": 48, "X": 49, "Y": 50,
-  "Z": 51
+  "P": 42, "Q": 43, "R": 44, "S": 45, "T": 46,
+  "U": 47, "V": 48, "W": 49, "X": 50, "Y": 51,
+  "Z": 52
 } 
 
-for i in firstHalf:
-  if i in secondHalf:
-    print(i)
+prioritySum = 0
 
+for rucksack in rucksacks:
+  firstHalf = set(rucksack[:len(rucksack)//2])
+  secondHalf = set(rucksack[len(rucksack)//2:])
+  for char in firstHalf:
+    if char in secondHalf:
+      prioritySum += alphaValues[char]
+
+print(prioritySum)
+      
