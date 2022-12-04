@@ -26,18 +26,20 @@ for rucksack in rucksacks:
       prioritySum += alphaValues[char]
 
 badgeSum = 0
-lastRuck = 0
-for firstRuck in range(0, len(rucksacks), 3):
-  threeRucks = rucksacks[firstRuck:lastRuck]
-  for element in rucksacks[firstRuck:lastRuck]:
-    for char in element:
-      if char in element[0] and char in element[1] and char in element[2]:
-        badgeSum += alphaValues[char]
-        print(badgeSum)
-    lastRuck +=3
-  # print(rucksacks[firstRuck:lastRuck])
-  
-    
+element = 0
 
-# print("answer part1: ", prioritySum)
+for i in range(0, len(rucksacks), 3):
+  ruck1 = set(rucksacks[element])
+  ruck2 = set(rucksacks[element + 1])
+  ruck3 = set(rucksacks[element + 2])
+  
+  for char in ruck1:
+    if char in ruck2 and char in ruck3:
+      badgeSum += alphaValues[char]
+  element +=3
+
+
+
+print("answer part1: ", prioritySum)
+print("answer part2: ", badgeSum)
       
