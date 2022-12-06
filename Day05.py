@@ -11,25 +11,31 @@ for char in stacks[8]:
 for stack in reversed(stacks[0:8]):
   key = 1
   pos = 1
-  print(transformed_dict[key])
   while (key < 10):
     if (stack[pos] != "[") and (stack[pos] != "]") and (stack[pos] != " "):
       transformed_dict[key] += [stack[pos]]
     key +=1
     pos +=4
 
-
-
 for instruction in instructions:
-  num = [int(num) for num in str.split(instruction) if num.isdigit()]
-  for transformed_dict[num[1]], transformed_dict[num[2]] in range(num[0]):
-    # remove = transformed_dict[num[1]].pop()
-    # transformed_dict[num[2]].append(remove)
-    
+  s = [int(s) for s in str.split(instruction) if s.isdigit()]
+  count = s[0]
+  x = transformed_dict[1]
+  y = transformed_dict[2]
+  while count > 0:
+    remove = transformed_dict[s[1]].pop()
+    transformed_dict[s[2]].append(remove)
+    count -= 1
+
 print(transformed_dict)
 
-# 'move 1 from 5 to 7'
+p1_answer = []
+for key in transformed_dict:
+  p1_answer.append(transformed_dict[key][-1])
+print("part 1: ", p1_answer)
 
+
+# ORIGINAL STACK
 #             [G] [W]         [Q]    
 # [Z]         [Q] [M]     [J] [F]    
 # [V]         [V] [S] [F] [N] [R]    
