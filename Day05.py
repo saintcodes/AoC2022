@@ -1,7 +1,7 @@
 with open('Day05data.in') as data:
   stacks = [i for i in data.read().split('\n')]
 
-# print(stacks[8])
+instructions = stacks[10:len(stacks)]
 transformed_dict = {}
 
 for char in stacks[8]:
@@ -19,8 +19,16 @@ for stack in reversed(stacks[0:8]):
     pos +=4
 
 
+
+for instruction in instructions:
+  num = [int(num) for num in str.split(instruction) if num.isdigit()]
+  for transformed_dict[num[1]], transformed_dict[num[2]] in range(num[0]):
+    # remove = transformed_dict[num[1]].pop()
+    # transformed_dict[num[2]].append(remove)
+    
 print(transformed_dict)
 
+# 'move 1 from 5 to 7'
 
 #             [G] [W]         [Q]    
 # [Z]         [Q] [M]     [J] [F]    
