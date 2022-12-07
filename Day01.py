@@ -21,16 +21,54 @@ for item in correctedData:
     num = int(item)
     calories += num
 
-#conditionals to determine sorted values
-  if calories > maxCalories:
+  num_data = []
+  for x in correctedData:
+    if x != "":
+      num_data.append(int(x))
+      print(num_data)
 
-    maxCalories = calories
-  elif calories > maxTwo:
-    maxTwo = calories
-  elif calories > maxThree:
-    maxThree = calories
+
+# largest_integer = max(numbered_Data)  #  39
+# numbered_data.remove(largest_integer)
+# print(largest_integer)
+
+# second_largest_integer = max(integers)  # 26
+#conditionals to determine sorted values
+  # third = first = second = -10000
+    
+  # for i in range(0, correctedData):
+    
+  #     # If current element is greater
+  #     # than first
+  #     if (int(correctedData[i]) > first):
+        
+  #         third = second
+  #         second = first
+  #         first = correctedData[i]
+        
+
+  #     # If arr[i] is in between first
+  #     # and second then update second
+  #     elif (correctedData[i] > second):
+        
+  #         third = second
+  #         second = correctedData[i]
+        
+  #     elif (correctedData[i] > third):
+  #         third = correctedData[i]
+    
+  # print("Three largest elements are", first, second, third)
+
+
+  # if calories > maxCalories:
+
+  #   maxCalories = calories
+  # elif calories > maxTwo:
+  #   maxTwo = calories
+  # elif calories > maxThree:
+  #   maxThree = calories
   
 
 
 print("Part 1", maxCalories)
-print("Part 2", maxCalories, maxTwo, maxThree)
+print("Part 2", first, second, third)
